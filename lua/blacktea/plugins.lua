@@ -1,4 +1,4 @@
--- require('onedark').load()
+vim.cmd.packadd('packer.nvim')
 
 return require('packer').startup(function(use)
     -- packer it self
