@@ -1,4 +1,4 @@
-require('onedark').load()
+-- require('onedark').load()
 
 return require('packer').startup(function(use)
     -- packer it self
