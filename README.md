@@ -32,5 +32,5 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 clone this repo:
 
 ```bash
-git clone git@github.com:Blacktea1501/nvim.git ~/.config/
+git clone git@github.com:Blacktea1501/nvim.git ~/.config/nvim
 ```
