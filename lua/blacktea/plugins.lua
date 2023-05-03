@@ -43,5 +43,10 @@ return require('packer').startup(function(use)
 		}
 	}
 
+    -- Git
+    -- vim git integration
+    use 'tpope/vim-fugitive'
+
+    -- copilot
     use 'github/copilot.vim'
 end)
