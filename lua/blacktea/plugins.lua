@@ -49,4 +49,9 @@ return require('packer').startup(function(use)
 
     -- copilot
     use 'github/copilot.vim'
+
+    -- latex
+    use 'lervag/vimtex'
+
+    use 'andweeb/presence.nvim'
 end)
