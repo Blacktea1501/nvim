@@ -43,7 +43,6 @@ return require('packer').startup(function(use)
 		}
 	}
 
-    -- Git
     -- vim git integration
     use 'tpope/vim-fugitive'
 
@@ -52,6 +51,11 @@ return require('packer').startup(function(use)
 
     -- latex
     use 'lervag/vimtex'
-
+    
+    -- discord rich presence
     use 'andweeb/presence.nvim'
+
+    -- sudo for nvim
+    use 'lambdalisue/suda.vim'
+
 end)
