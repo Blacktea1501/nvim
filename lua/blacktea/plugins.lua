@@ -45,17 +45,14 @@ return require('packer').startup(function(use)
 
     -- vim git integration
     use 'tpope/vim-fugitive'
-
     -- copilot
     use 'github/copilot.vim'
-
     -- latex
     use 'lervag/vimtex'
-    
     -- discord rich presence
     use 'andweeb/presence.nvim'
-
     -- sudo for nvim
     use 'lambdalisue/suda.vim'
-
+    -- nice to have
+    use 'tpope/vim-surround'
 end)
