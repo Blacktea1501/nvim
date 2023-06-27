@@ -19,3 +19,13 @@ vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 vim.keymap.set("n", "<leader>lc", "<cmd>VimtexCompile<CR>")
+
+vim.keymap.set("n", "<leader>b", vim.cmd.bp)
+
+-- automaticly close brackets
+vim.keymap.set("i", "(", "()<Left>")
+vim.keymap.set("i", "[", "[]<Left>")
+vim.keymap.set("i", "{", "{}<Left>")
+vim.keymap.set("i", '"', '""<Left>')
+vim.keymap.set("i", "'", "''<Left>")
+vim.keymap.set("i", "<", "<><Left>")

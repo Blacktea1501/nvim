@@ -42,7 +42,6 @@ return require('packer').startup(function(use)
 			{'rafamadriz/friendly-snippets'},
 		}
 	}
-
     -- vim git integration
     use 'tpope/vim-fugitive'
     -- copilot
