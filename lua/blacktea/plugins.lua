@@ -42,6 +42,9 @@ return require('packer').startup(function(use)
 			{'rafamadriz/friendly-snippets'},
 		}
 	}
+    use 'tpope/vim-repeat'
+    -- replace with registers
+    use 'vim-scripts/ReplaceWithRegister'
     -- vim git integration
     use 'tpope/vim-fugitive'
     -- copilot
@@ -54,4 +57,6 @@ return require('packer').startup(function(use)
     use 'lambdalisue/suda.vim'
     -- nice to have
     use 'tpope/vim-surround'
+    -- transparent background
+    use 'xiyaowong/nvim-transparent'
 end)
