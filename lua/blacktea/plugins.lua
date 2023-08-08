@@ -59,4 +59,6 @@ return require('packer').startup(function(use)
     use 'tpope/vim-surround'
     -- transparent background
     use 'xiyaowong/nvim-transparent'
+    -- css colors
+    use 'ap/vim-css-color'
 end)
