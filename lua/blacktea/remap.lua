@@ -23,11 +23,3 @@ vim.keymap.set("n", "<leader>lc", "<cmd>VimtexCompile<CR>")
 vim.keymap.set("n", "<leader>b", vim.cmd.bp)
 
 vim.keymap.set("n", "<leader>t", vim.lsp.buf.hover)
-
--- automaticly close brackets
-vim.keymap.set("i", "(", "()<Left>")
-vim.keymap.set("i", "[", "[]<Left>")
-vim.keymap.set("i", "{", "{}<Left>")
-vim.keymap.set("i", '"', '""<Left>')
-vim.keymap.set("i", "'", "''<Left>")
-vim.keymap.set("i", "<", "<><Left>")

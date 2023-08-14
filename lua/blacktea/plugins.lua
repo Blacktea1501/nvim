@@ -61,4 +61,6 @@ return require('packer').startup(function(use)
     use 'xiyaowong/nvim-transparent'
     -- css colors
     use 'ap/vim-css-color'
+    -- autopairs
+    use 'LunarWatcher/auto-pairs'
 end)
