@@ -1,4 +1,5 @@
 vim.opt.guicursor = ""
+-- setting color of my cursor to be a yellow  block in all modes
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
