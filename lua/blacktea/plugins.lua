@@ -67,4 +67,6 @@ return require('packer').startup(function(use)
     use 'ap/vim-css-color'
     -- autopairs
     use 'LunarWatcher/auto-pairs'
+    -- indent lines
+    use 'lukas-reineke/indent-blankline.nvim'
 end)
