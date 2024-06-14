@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 
-km = vim.keymap
+local km = vim.keymap
 
 km.set("n", "<leader>pv", vim.cmd.Ex)
 
@@ -10,8 +10,8 @@ km.set("v", "K", ":m '>-2<CR>gv=gv")
 km.set("n", "<C-d>", "<C-d>zz")
 km.set("n", "<C-u>", "<C-u>zz")
 
-km.set({"n", "v"}, "<leader>y", [["+y]]) 
-km.set("n", "<leader>Y", [["+Y]]) 
+km.set({ "n", "v" }, "<leader>y", [["+y]])
+km.set("n", "<leader>Y", [["+Y]])
 
 -- format with language server protocol
 km.set("n", "<leader>f", vim.lsp.buf.format)
