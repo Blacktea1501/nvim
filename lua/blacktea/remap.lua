@@ -1,25 +1,36 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+km = vim.keymap
 
-vim.keymap.set("n", "J", "mzJ`z")
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+km.set("n", "<leader>pv", vim.cmd.Ex)
 
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
+km.set("v", "J", ":m '>+1<CR>gv=gv")
+km.set("v", "K", ":m '>-2<CR>gv=gv")
 
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+km.set("n", "<C-d>", "<C-d>zz")
+km.set("n", "<C-u>", "<C-u>zz")
 
-vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+km.set({"n", "v"}, "<leader>y", [["+y]]) 
+km.set("n", "<leader>Y", [["+Y]]) 
 
-vim.keymap.set("n", "<leader>lc", "<cmd>VimtexCompile<CR>")
+-- format with language server protocol
+km.set("n", "<leader>f", vim.lsp.buf.format)
 
-vim.keymap.set("n", "<leader>b", vim.cmd.bp)
+-- replace occurrences in file
+km.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
-vim.keymap.set("n", "<leader>t", vim.lsp.buf.hover)
+-- replace occurrences in visual selection
+km.set("v", "<leader>r", [[:s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+
+-- make file executable
+km.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
+--cargo run
+km.set("n", "<leader>cr", "<cmd>! cargo run --release<CR>", { silent = true })
+km.set("n", "<leader>cb", "<cmd>! cargo build --release<CR>", { silent = true })
+-- vimtex compile
+km.set("n", "<leader>lc", "<cmd>VimtexCompile<CR>", { silent = true })
+
+-- sort line
+km.set("v", "<leader>s", [[:!xargs -n1 | sort | xargs<CR>]], { silent = true })

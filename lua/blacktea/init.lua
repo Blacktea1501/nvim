@@ -1,5 +1,5 @@
-require("blacktea.plugins")
-require("blacktea.remap")
 require("blacktea.set")
+require("blacktea.remap")
+require("blacktea.lazy")
 
- require('onedark').load()
+vim.cmd("colorscheme onedark")
