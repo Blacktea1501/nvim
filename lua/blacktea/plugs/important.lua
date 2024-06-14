@@ -5,6 +5,5 @@ return {
     'tpope/vim-repeat',
     'tpope/vim-fugitive',
     'lambdalisue/suda.vim',
-    'github/copilot.vim',
     'jlcrochet/vim-razor',
 }
