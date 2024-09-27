@@ -37,6 +37,23 @@ return {
                     local lua_opts = lsp_zero.nvim_lua_ls()
                     require('lspconfig').lua_ls.setup(lua_opts)
                 end,
+                -- java = function()
+                --     require('lspconfig').jdtls.setup({
+                --         settings = {
+                --             java = {
+                --                 configuration = {
+                --                     runtimes = {
+                --                         {
+                --                             name = "JavaSE-21",
+                --                             path = "/opt/jdk-21",
+                --                             default = true,
+                --                         }
+                --                     }
+                --                 }
+                --             }
+                --         }
+                --     })
+                -- end,
             }
         })
 

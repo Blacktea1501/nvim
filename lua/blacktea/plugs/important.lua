@@ -1,4 +1,5 @@
 return {
+    -- must have
     'nvim-lua/plenary.nvim',
     'tpope/vim-commentary',
     'tpope/vim-surround',
@@ -6,4 +7,6 @@ return {
     'tpope/vim-fugitive',
     'lambdalisue/suda.vim',
     'jlcrochet/vim-razor',
+
+    -- optional oneliner
 }
