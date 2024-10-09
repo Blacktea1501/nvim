@@ -18,7 +18,3 @@ vim.opt.termguicolors  = true
 vim.opt.scrolloff      = 8
 
 vim.opt.syntax         = "on"
-
-vim.diagnostic.config({
-  virtual_text = false,
-})
