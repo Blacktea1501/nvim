@@ -6,7 +6,4 @@ return {
     'tpope/vim-repeat',
     'tpope/vim-fugitive',
     'lambdalisue/suda.vim',
-    'jlcrochet/vim-razor',
-
-    -- optional oneliner
 }
