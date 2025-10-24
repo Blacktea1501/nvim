@@ -10,6 +10,7 @@ return {
     },
     config = function()
         local lsp_zero = require('lsp-zero')
+
         lsp_zero.on_attach(function(client, bufnr)
             local opts = { buffer = bufnr, remap = false }
             vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
@@ -19,14 +20,11 @@ return {
             vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
             vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
             vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
-            -- vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
-            -- vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
             vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
             vim.keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=1<CR>", opts)
         end)
 
-        -- to learn how to use mason.nvim with lsp-zero
-        -- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
+        -- Setup mason and mason-lspconfig
         require('mason').setup({})
         require('mason-lspconfig').setup({
             ensure_installed = { 'clangd', 'rust_analyzer' },
@@ -37,20 +35,19 @@ return {
                     require('lspconfig').lua_ls.setup(lua_opts)
                 end,
             }
-
         })
 
+        -- Setup nvim-cmp
         local cmp = require('cmp')
         local cmp_select = { behavior = cmp.SelectBehavior.Insert }
 
         cmp.setup({
             sources = {
-                { name = 'path' },
                 { name = 'nvim_lsp' },
-                { name = 'nvim_lua' },
-                { name = 'friendly_snippets' },
-                { name = 'luasnip',          keyword_length = 2 },
-                { name = 'buffer',           keyword_length = 3 },
+                { name = 'luasnip', keyword_length = 2 },
+                { name = 'path' },
+                { name = 'buffer', keyword_length = 3 },
+                { name = 'friendly_snippets' }, 
             },
             formatting = lsp_zero.cmp_format(),
             mapping = cmp.mapping.preset.insert({
@@ -59,6 +56,12 @@ return {
                 ['<C-y>'] = cmp.mapping.confirm({ select = true }),
                 ['<C-Space>'] = cmp.mapping.complete(),
             }),
+            -- Add snippets configuration if using LuaSnip
+             snippet = {
+               expand = function(args)
+                 require('luasnip').lsp_expand(args.body)
+               end,
+             },
         })
-    end
+    end,
 }
