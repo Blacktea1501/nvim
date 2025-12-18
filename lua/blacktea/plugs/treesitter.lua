@@ -1,9 +1,8 @@
 return {
     'nvim-treesitter/nvim-treesitter',
-    dependencies = { 'nvim-treesitter/playground'},
     build = ':TSUpdate',
     config = function()
-        local configs = require('nvim-treesitter.configs')
+        local configs = require('nvim-treesitter')
         configs.setup {
             ensure_installed = {"c", "lua", "cpp", "rust"},
             sync_install = true,
@@ -11,7 +10,6 @@ return {
             highlight = {
                 enable = true,
                 additional_vim_regex_highlighting = false,
-                disable = {"latex"},
             },
         }
     end,
