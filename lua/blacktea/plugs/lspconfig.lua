@@ -44,10 +44,10 @@ return {
         cmp.setup({
             sources = {
                 { name = 'nvim_lsp' },
-                { name = 'luasnip', keyword_length = 2 },
+                { name = 'luasnip',          keyword_length = 2 },
                 { name = 'path' },
-                { name = 'buffer', keyword_length = 3 },
-                { name = 'friendly_snippets' }, 
+                { name = 'buffer',           keyword_length = 3 },
+                { name = 'friendly_snippets' },
             },
             formatting = lsp_zero.cmp_format(),
             mapping = cmp.mapping.preset.insert({
@@ -57,11 +57,11 @@ return {
                 ['<C-Space>'] = cmp.mapping.complete(),
             }),
             -- Add snippets configuration if using LuaSnip
-             snippet = {
-               expand = function(args)
-                 require('luasnip').lsp_expand(args.body)
-               end,
-             },
+            snippet = {
+                expand = function(args)
+                    require('luasnip').lsp_expand(args.body)
+                end,
+            },
         })
     end,
 }

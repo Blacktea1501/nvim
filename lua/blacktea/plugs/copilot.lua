@@ -1,8 +1,7 @@
 return {
     'github/copilot.vim',
     config = function()
-        -- default copilot to off
-        vim.g.copilot_enabled = false
+        vim.g.copilot_enabled = true;
 
         vim.keymap.set('i', '<C-L>', '<Plug>(copilot-accept-word)')
         vim.keymap.set('i', '<C-u>', '<Plug>(copilot-next)')
